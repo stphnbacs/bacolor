@@ -1,0 +1,23 @@
+{% load static %}
+
+<nav class="navbar sticky-top navbar-expand-lg text-white bg-dark">
+   <image alt="logo" width="50" height="70" class="d-inline-block align-text-top" src="{% static 'images/logo.png'%}"></image>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link activate" href="{% url 'home'%}"> Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about'%}">About KIND</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'artist'%}">Artist</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</nav>

@@ -1,0 +1,45 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Total Musicians: {{total_musician}}</h1>
+<h1>Total Albums: {{total_album}}</h1>
+<h1>Total Accepted: {{accepted}}</h1>
+<h1>Total Pending: {{pending}}</h1>
+<button><a href="{% url 'addArtist' %}">Add Artists</a></button>
+<br>
+<br>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>ARTIST NAME</th>
+        <th>PHONE</th>
+        <th>EMAIL</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+    {% for musician in musicians %}
+        <td>{{musician.id}}</td>
+        <td>{{musician.name}}</td>
+        <td>{{musician.phone}}</td>
+        <td>{{musician.email}}</td>
+        <td>
+            <a href="{% url 'profile' musician.id %}">Update</a>
+            <a href="{% url 'deleteProfile' musician.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<h1>______________________</h1>
+
+    {% for musician in musicians %}
+<h1>Name: {{musician.name}}</h1>
+<div>
+    {% for group in musician.group.all %}
+<h1>Group: {{group.name}}</h1>
+    {% endfor %}
+</div>
+
+{% endfor %}
+{% endblock %}

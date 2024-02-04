@@ -1,0 +1,21 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <button><a href="{% url 'artist' %}">Back</a></button>
+    </div>
+
+    <br>
+
+<h1>Profile Page</h1>
+
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+{% endblock %}

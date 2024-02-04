@@ -1,0 +1,22 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+
+    <div>
+       <p>Do you really want to delete this musician?</p>
+    </div>
+
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <button><a href="{% url 'artist' %}">Cancel</a></button>
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+<br>
+<br>
+
+
+{% endblock %}
